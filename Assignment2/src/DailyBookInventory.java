@@ -5,7 +5,7 @@ public class DailyBookInventory {
 	static int booksCheckedOut;
 	static int totalOfBooksProcessed;
 	
-	static String isISBN13() {
+	static void isISBN13() {
 		String isbnInput;
 		int result;
 		Scanner userInput = new Scanner(System.in);
@@ -28,18 +28,10 @@ public class DailyBookInventory {
 				break;
 			} else {
 				isbnInput += 10 - result;
-				result = ISBNCalculation(isbnInput);
-			}
-			if(result == 0) {
 				System.out.println("The ISBN-13 number is: " + isbnInput + "\n");
 				break;
 			}
-			
-			System.out.print("\n" + "!!!-----------------------------!!!");
-			System.out.print("\n" + "! Invalid input, please try again !");
-			System.out.println("\n" + "!!!-----------------------------!!!" + "\n");
 		}
-		return isbnInput;
 	}
 	
 	static int ISBNCalculation(String number) {
@@ -47,7 +39,7 @@ public class DailyBookInventory {
 		int multiply;
 		int digit;
 		
-		for(int i = 1; i <= number.length(); i++) {
+		for(int i = 1; i <= 12; i++) {
 			if(i % 2 == 0)
 				multiply = 3;
 			else 
@@ -96,11 +88,19 @@ public class DailyBookInventory {
 	static void contProgram() {
 		Scanner input = new Scanner(System.in);
 		String menuAction;
+		
 		while(true) {
 			System.out.print("Enter 'Y' to continue, 'N' to quit: ");
 			menuAction = input.nextLine();
 
 			if(menuAction.equals("N")) {
+				System.out.println("\n" + "------------------------");
+				System.out.println("| Daily Book Inventory |");
+				System.out.println("------------------------");
+				System.out.println("Number of books returned: " + booksReturned);
+				System.out.println("Number of books checked out: " + booksCheckedOut);
+				System.out.println("Number of books processed: " + totalOfBooksProcessed);
+				System.out.println("------------------------");
 				System.exit(0);
 			}
 			else if(menuAction.equals("Y")) {
@@ -125,5 +125,4 @@ public class DailyBookInventory {
 		processInventory();
 		contProgram();
 	}
-
 }
