@@ -10,7 +10,7 @@ public class DailyBookInventory {
 		int result;
 		Scanner userInput = new Scanner(System.in);
 		
-		while(true) {
+		do {
 			System.out.print("\n" + "Enter the first 12 digits of an ISBN-13 as a String: ");
 			isbnInput = userInput.nextLine();
 			
@@ -31,7 +31,7 @@ public class DailyBookInventory {
 				System.out.println("The ISBN-13 number is: " + isbnInput + "\n");
 				break;
 			}
-		}
+		} while(true);
 	}
 	
 	static int ISBNCalculation(String number) {
@@ -55,7 +55,7 @@ public class DailyBookInventory {
 	static void processInventory() {
 		Scanner userInput = new Scanner(System.in);
 		String transaction;
-		while(true) {
+		do {
 			System.out.print("Enter 'R' for return or 'C' for check out: ");
 			transaction = userInput.nextLine();
 			
@@ -72,7 +72,7 @@ public class DailyBookInventory {
 				System.out.print("\n" + "! Invalid input, please try again !");
 				System.out.println("\n" + "!!!-----------------------------!!!" + "\n");
 			}
-		}
+		} while(true);
 		totalOfBooksProcessed++;
 		
 		System.out.println("------------------------");
@@ -89,7 +89,7 @@ public class DailyBookInventory {
 		Scanner input = new Scanner(System.in);
 		String menuAction;
 		
-		while(true) {
+		do {
 			System.out.print("Enter 'Y' to continue, 'N' to quit: ");
 			menuAction = input.nextLine();
 
@@ -111,12 +111,10 @@ public class DailyBookInventory {
 				System.out.print("\n" + "! Invalid input, please try again !");
 				System.out.println("\n" + "!!!-----------------------------!!!" + "\n");
 			}
-		}
+		} while(true);
 	}
 
-	public static void main(String[] args) {
-		String menuAction = null;
-		
+	public static void main(String[] args) {		
 		System.out.println("------------------------------------------------");
 		System.out.println("- Welcome to the Daily Book Inventory Program! -");
 		System.out.println("------------------------------------------------");
