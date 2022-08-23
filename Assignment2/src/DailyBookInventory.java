@@ -36,18 +36,15 @@ public class DailyBookInventory {
 	
 	static int ISBNCalculation(String number) {
 		int sum = 0;
-		int multiply;
 		int digit;
 		
 		for(int i = 1; i <= 12; i++) {
-			if(i % 2 == 0)
-				multiply = 3;
-			else 
-				multiply = 1;
-			
 			digit = Character.getNumericValue(number.charAt(i - 1));
 			
-			sum += (multiply * digit);
+			if(i % 2 == 0)
+				sum += digit * 3;
+			else 
+				sum += digit;
 		}
 		return sum % 10;
 	}
