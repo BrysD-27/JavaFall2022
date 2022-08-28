@@ -13,36 +13,41 @@ public class SavingsAccountRunner {
 		System.out.print("Enter your selection: ");
 	}
 	
+	public static double makeDeposit() {
+		Scanner input = new Scanner(System.in);
+		double amount;
+		
+		do {
+			System.out.print("\n" + "Enter your deposit amount: ");
+			amount = input.nextDouble();
+			if (amount > 0)
+				return amount;
+			System.out.println("\n" + "INVALID AMOUNT - TRY AGAIN!");
+		} while(true);
+	}
+	
 	public static void contProgram(SavingsAccount account) {
-		char option;
+		int option;
 		Scanner input = new Scanner(System.in);
 		
 		while(true) {
 			menuOptions();
 			
-			option = input.next().charAt(0);
+			option = input.nextInt();
 			
 			switch(option) {
-				case '1': 
-					double amount = 0;
-					while(amount <= 0) {
-						System.out.print("\n" + "Enter your deposit amount: ");
-						amount = input.nextDouble();
-						if(amount > 0)
-							break;
-						System.out.println("\n" + "INVALID AMOUNT - TRY AGAIN!");
-					}
-					account.deposit(amount);
+				case 1: 
+					account.deposit(makeDeposit());
 					System.out.println("\n" + "New Balance: $" + df.format(account.getBalance()));
 					break;
-				case '2': 
+				case 2: 
 					System.out.println("\n" + "Your Monthly Interest Amount is: $" +
 									   df.format(account.getMonthlyIntRate()));
 					break;
-				case '3':
+				case 3:
 					System.out.println("\n" + account.toString());
 					break;
-				case '4':
+				case 4:
 					System.out.println("\n" + "Thank you - GoodBye!");
 					System.exit(0);
 					break;
