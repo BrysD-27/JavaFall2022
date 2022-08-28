@@ -79,7 +79,6 @@ public class DailyBookInventory {
 		System.out.println("Number of books checked out: " + booksCheckedOut);
 		System.out.println("Number of books processed: " + totalOfBooksProcessed);
 		System.out.println("------------------------");
-		
 	}
 	
 	static void contProgram() {
