@@ -1,10 +1,15 @@
+/**
+* Name:	Bryson Davis 
+* File: Assignment4\MonsterTruckDemo.java
+* Description:	Assignemnt 4 
+*/
 
 public class MonsterTruckDemo {
 	
 	public static String printTruckHeader(String truckNum) {
 		return "##########################" + "\n" +
 			   "# MONSTER TRUCK " + truckNum + " INFO #" + "\n" +
-			   "##########################";
+			   "##########################" + "\n";
 	}
 
 	public static void main(String[] args) {
@@ -22,7 +27,7 @@ public class MonsterTruckDemo {
 		
 		MonsterTruck monsterTruckTwo = new MonsterTruck("Max D", "Silver", "Gasoline", 2022, 10, 2, "Backflip");
 		
-		System.out.println("\n" + printTruckHeader("TWO"));
+		System.out.println(printTruckHeader("TWO"));
 		
 		System.out.println(monsterTruckTwo.toString());
 	}

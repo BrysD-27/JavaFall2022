@@ -1,3 +1,9 @@
+/**
+* Name:	Bryson Davis 
+* File: Assignment4\MonsterTruck.java
+* Description:	Assignemnt 4 
+*/
+
 import java.text.DecimalFormat;
 
 public class MonsterTruck extends Vehicle {
@@ -41,12 +47,12 @@ public class MonsterTruck extends Vehicle {
 	
 	public String toString() {
 		int numOfGames = numOfWins + numOfLosses;
-		double winPercentage = ((double)numOfWins / (double)numOfGames) * 100;
+		double winPercentage = (double)numOfWins / (double)numOfGames * 100;
 		
 		return super.toString() +
 			   "# Wins: " + numOfWins + "\n" + 
 			   "# Losses: " + numOfLosses + "\n" +
 			   "Special Trick: " + specialTrick + "\n" +
-			   "Win Percentage: " + df.format(winPercentage) + "%";
+			   "Win Percentage: " + df.format(winPercentage) + "%" + "\n";
 	}
 }

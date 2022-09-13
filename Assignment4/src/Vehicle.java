@@ -1,3 +1,8 @@
+/**
+* Name:	Bryson Davis 
+* File: Assignment4\Vehicle.java
+* Description:	Assignemnt 4 
+*/
 
 public class Vehicle {
 	private String name;
