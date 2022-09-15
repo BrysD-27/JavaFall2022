@@ -45,14 +45,18 @@ public class MonsterTruck extends Vehicle {
 		this.specialTrick = trick;
 	}
 	
-	public String toString() {
+	public String getWinPercentage() {
 		int numOfGames = numOfWins + numOfLosses;
 		double winPercentage = (double)numOfWins / (double)numOfGames * 100;
 		
+		return df.format(winPercentage) + "%";
+	}
+	
+	public String toString() {
 		return super.toString() +
 			   "# Wins: " + numOfWins + "\n" + 
 			   "# Losses: " + numOfLosses + "\n" +
 			   "Special Trick: " + specialTrick + "\n" +
-			   "Win Percentage: " + df.format(winPercentage) + "%" + "\n";
+			   "Win Percentage: " + getWinPercentage() + "\n";
 	}
 }

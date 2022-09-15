@@ -1,13 +1,15 @@
 import java.util.Scanner;
 
-public class test {
+public class test
+{
 
-	public static void main(String[] args) {
-		int count = 0; 
-	do 
-	{
-	   System.out.println("Welcome to Java");
-	} while (count++ < 10);
-	}
-
+	  public static void main(String[] args)
+	  { 
+	    System.out.println(doSomething(4));
+	  }
+	  
+	  public static int doSomething(int x)
+	  { 
+	    
+	  }
 }
