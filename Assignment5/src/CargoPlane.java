@@ -93,6 +93,4 @@ public class CargoPlane implements AirVehicle {
 		System.out.println(this.planeName + " has successfully landed.");
 		
 	}
-	
-	
 }
